@@ -1,0 +1,395 @@
+{
+  "results": [
+    {
+      "rule_id": "AVD-GCP-0013",
+      "long_id": "google-dns-enable-dnssec",
+      "rule_description": "Cloud DNS should use DNSSEC",
+      "rule_provider": "google",
+      "rule_service": "dns",
+      "impact": "Unverified DNS responses could lead to man-in-the-middle attacks",
+      "resolution": "Enable DNSSEC",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/dns/enable-dnssec/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/dns_managed_zone#state"
+      ],
+      "description": "Managed zone does not have DNSSEC enabled.",
+      "severity": "MEDIUM",
+      "warning": false,
+      "status": 0,
+      "resource": "google_dns_managed_zone.prod",
+      "location": {
+        "filename": "/Users/a0084756/workspace/acme-corp/infrastructure/modules/core/core-services/dns.tf",
+        "start_line": 11,
+        "end_line": 19
+      }
+    },
+    {
+      "rule_id": "AVD-GCP-0013",
+      "long_id": "google-dns-enable-dnssec",
+      "rule_description": "Cloud DNS should use DNSSEC",
+      "rule_provider": "google",
+      "rule_service": "dns",
+      "impact": "Unverified DNS responses could lead to man-in-the-middle attacks",
+      "resolution": "Enable DNSSEC",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/dns/enable-dnssec/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/dns_managed_zone#state"
+      ],
+      "description": "Managed zone does not have DNSSEC enabled.",
+      "severity": "MEDIUM",
+      "warning": false,
+      "status": 0,
+      "resource": "google_dns_managed_zone.nonprod",
+      "location": {
+        "filename": "/Users/a0084756/workspace/acme-corp/infrastructure/modules/core/core-services/dns.tf",
+        "start_line": 1,
+        "end_line": 9
+      }
+    },
+    {
+      "rule_id": "AVD-GCP-0029",
+      "long_id": "google-compute-enable-vpc-flow-logs",
+      "rule_description": "VPC flow logs should be enabled for all subnetworks",
+      "rule_provider": "google",
+      "rule_service": "compute",
+      "impact": "Limited auditing capability and awareness",
+      "resolution": "Enable VPC flow logs",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/compute/enable-vpc-flow-logs/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_subnetwork#enable_flow_logs"
+      ],
+      "description": "Subnetwork does not have VPC flow logs enabled.",
+      "severity": "LOW",
+      "warning": false,
+      "status": 0,
+      "resource": "google_compute_subnetwork.main",
+      "location": {
+        "filename": "/Users/a0084756/workspace/acme-corp/infrastructure/modules/instance/api-backend/networking.tf",
+        "start_line": 1,
+        "end_line": 23
+      }
+    },
+    {
+      "rule_id": "AVD-GCP-0029",
+      "long_id": "google-compute-enable-vpc-flow-logs",
+      "rule_description": "VPC flow logs should be enabled for all subnetworks",
+      "rule_provider": "google",
+      "rule_service": "compute",
+      "impact": "Limited auditing capability and awareness",
+      "resolution": "Enable VPC flow logs",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/compute/enable-vpc-flow-logs/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_subnetwork#enable_flow_logs"
+      ],
+      "description": "Subnetwork does not have VPC flow logs enabled.",
+      "severity": "LOW",
+      "warning": false,
+      "status": 0,
+      "resource": "google_compute_subnetwork.main",
+      "location": {
+        "filename": "/Users/a0084756/workspace/acme-corp/infrastructure/modules/instance/ignition-proxy/networking.tf",
+        "start_line": 1,
+        "end_line": 23
+      }
+    },
+    {
+      "rule_id": "AVD-GCP-0066",
+      "long_id": "google-storage-bucket-encryption-customer-key",
+      "rule_description": "Cloud Storage buckets should be encrypted with a customer-managed key.",
+      "rule_provider": "google",
+      "rule_service": "storage",
+      "impact": "Using unmanaged keys does not allow for proper key management.",
+      "resolution": "Encrypt Cloud Storage buckets using customer-managed keys.",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/storage/bucket-encryption-customer-key/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket#encryption"
+      ],
+      "description": "Storage bucket encryption does not use a customer-managed key.",
+      "severity": "LOW",
+      "warning": false,
+      "status": 0,
+      "resource": "google_storage_bucket.main",
+      "location": {
+        "filename": "/Users/a0084756/workspace/acme-corp/infrastructure/modules/instance/ignition-proxy/storage.tf",
+        "start_line": 1,
+        "end_line": 14
+      }
+    },
+    {
+      "rule_id": "AVD-GCP-0066",
+      "long_id": "google-storage-bucket-encryption-customer-key",
+      "rule_description": "Cloud Storage buckets should be encrypted with a customer-managed key.",
+      "rule_provider": "google",
+      "rule_service": "storage",
+      "impact": "Using unmanaged keys does not allow for proper key management.",
+      "resolution": "Encrypt Cloud Storage buckets using customer-managed keys.",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/storage/bucket-encryption-customer-key/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket#encryption"
+      ],
+      "description": "Storage bucket encryption does not use a customer-managed key.",
+      "severity": "LOW",
+      "warning": false,
+      "status": 0,
+      "resource": "google_storage_bucket.snapshots",
+      "location": {
+        "filename": "/Users/a0084756/workspace/acme-corp/infrastructure/modules/instance/landing-zone/main.tf",
+        "start_line": 66,
+        "end_line": 81
+      }
+    },
+    {
+      "rule_id": "AVD-GCP-0066",
+      "long_id": "google-storage-bucket-encryption-customer-key",
+      "rule_description": "Cloud Storage buckets should be encrypted with a customer-managed key.",
+      "rule_provider": "google",
+      "rule_service": "storage",
+      "impact": "Using unmanaged keys does not allow for proper key management.",
+      "resolution": "Encrypt Cloud Storage buckets using customer-managed keys.",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/storage/bucket-encryption-customer-key/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket#encryption"
+      ],
+      "description": "Storage bucket encryption does not use a customer-managed key.",
+      "severity": "LOW",
+      "warning": false,
+      "status": 0,
+      "resource": "google_storage_bucket.access_logs",
+      "location": {
+        "filename": "/Users/a0084756/workspace/acme-corp/infrastructure/modules/instance/landing-zone/main.tf",
+        "start_line": 49,
+        "end_line": 64
+      }
+    },
+    {
+      "rule_id": "AVD-GCP-0029",
+      "long_id": "google-compute-enable-vpc-flow-logs",
+      "rule_description": "VPC flow logs should be enabled for all subnetworks",
+      "rule_provider": "google",
+      "rule_service": "compute",
+      "impact": "Limited auditing capability and awareness",
+      "resolution": "Enable VPC flow logs",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/compute/enable-vpc-flow-logs/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_subnetwork#enable_flow_logs"
+      ],
+      "description": "Subnetwork does not have VPC flow logs enabled.",
+      "severity": "LOW",
+      "warning": false,
+      "status": 0,
+      "resource": "google_compute_subnetwork.main",
+      "location": {
+        "filename": "/Users/a0084756/workspace/acme-corp/infrastructure/modules/instance/postgresql/networking.tf",
+        "start_line": 1,
+        "end_line": 23
+      }
+    },
+    {
+      "rule_id": "AVD-GCP-0014",
+      "long_id": "google-sql-enable-pg-temp-file-logging",
+      "rule_description": "Temporary file logging should be enabled for all temporary files.",
+      "rule_provider": "google",
+      "rule_service": "sql",
+      "impact": "Use of temporary files will not be logged",
+      "resolution": "Enable temporary file logging for all files",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/sql/enable-pg-temp-file-logging/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance"
+      ],
+      "description": "Database instance has temporary file logging disabled.",
+      "severity": "MEDIUM",
+      "warning": false,
+      "status": 0,
+      "resource": "module.postgresql",
+      "location": {
+        "filename": "git::https:/github.com/terraform-google-modules/terraform-google-sql-db?ref=e0669c7eb6c3d788cd7ad3e176c64c9c7dd7e924/modules/postgresql/main.tf",
+        "start_line": 56,
+        "end_line": 212
+      }
+    },
+    {
+      "rule_id": "AVD-GCP-0015",
+      "long_id": "google-sql-encrypt-in-transit-data",
+      "rule_description": "SSL connections to a SQL database instance should be enforced.",
+      "rule_provider": "google",
+      "rule_service": "sql",
+      "impact": "Intercepted data can be read in transit",
+      "resolution": "Enforce SSL for all connections",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/sql/encrypt-in-transit-data/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance"
+      ],
+      "description": "Database instance does not require TLS for all connections.",
+      "severity": "HIGH",
+      "warning": false,
+      "status": 0,
+      "resource": "module.postgresql",
+      "location": {
+        "filename": "git::https:/github.com/terraform-google-modules/terraform-google-sql-db?ref=e0669c7eb6c3d788cd7ad3e176c64c9c7dd7e924/modules/postgresql/main.tf",
+        "start_line": 113,
+        "end_line": 137
+      }
+    },
+    {
+      "rule_id": "AVD-GCP-0025",
+      "long_id": "google-sql-pg-log-checkpoints",
+      "rule_description": "Ensure that logging of checkpoints is enabled.",
+      "rule_provider": "google",
+      "rule_service": "sql",
+      "impact": "Insufficient diagnostic data.",
+      "resolution": "Enable checkpoints logging.",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/sql/pg-log-checkpoints/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance"
+      ],
+      "description": "Database instance is not configured to log checkpoints.",
+      "severity": "MEDIUM",
+      "warning": false,
+      "status": 0,
+      "resource": "module.postgresql",
+      "location": {
+        "filename": "git::https:/github.com/terraform-google-modules/terraform-google-sql-db?ref=e0669c7eb6c3d788cd7ad3e176c64c9c7dd7e924/modules/postgresql/main.tf",
+        "start_line": 56,
+        "end_line": 212
+      }
+    },
+    {
+      "rule_id": "AVD-GCP-0016",
+      "long_id": "google-sql-pg-log-connections",
+      "rule_description": "Ensure that logging of connections is enabled.",
+      "rule_provider": "google",
+      "rule_service": "sql",
+      "impact": "Insufficient diagnostic data.",
+      "resolution": "Enable connection logging.",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/sql/pg-log-connections/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance"
+      ],
+      "description": "Database instance is not configured to log connections.",
+      "severity": "MEDIUM",
+      "warning": false,
+      "status": 0,
+      "resource": "module.postgresql",
+      "location": {
+        "filename": "git::https:/github.com/terraform-google-modules/terraform-google-sql-db?ref=e0669c7eb6c3d788cd7ad3e176c64c9c7dd7e924/modules/postgresql/main.tf",
+        "start_line": 56,
+        "end_line": 212
+      }
+    },
+    {
+      "rule_id": "AVD-GCP-0022",
+      "long_id": "google-sql-pg-log-disconnections",
+      "rule_description": "Ensure that logging of disconnections is enabled.",
+      "rule_provider": "google",
+      "rule_service": "sql",
+      "impact": "Insufficient diagnostic data.",
+      "resolution": "Enable disconnection logging.",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/sql/pg-log-disconnections/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance"
+      ],
+      "description": "Database instance is not configured to log disconnections.",
+      "severity": "MEDIUM",
+      "warning": false,
+      "status": 0,
+      "resource": "module.postgresql",
+      "location": {
+        "filename": "git::https:/github.com/terraform-google-modules/terraform-google-sql-db?ref=e0669c7eb6c3d788cd7ad3e176c64c9c7dd7e924/modules/postgresql/main.tf",
+        "start_line": 56,
+        "end_line": 212
+      }
+    },
+    {
+      "rule_id": "AVD-GCP-0020",
+      "long_id": "google-sql-pg-log-lock-waits",
+      "rule_description": "Ensure that logging of lock waits is enabled.",
+      "rule_provider": "google",
+      "rule_service": "sql",
+      "impact": "Issues leading to denial of service may not be identified.",
+      "resolution": "Enable lock wait logging.",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/sql/pg-log-lock-waits/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance"
+      ],
+      "description": "Database instance is not configured to log lock waits.",
+      "severity": "MEDIUM",
+      "warning": false,
+      "status": 0,
+      "resource": "module.postgresql",
+      "location": {
+        "filename": "git::https:/github.com/terraform-google-modules/terraform-google-sql-db?ref=e0669c7eb6c3d788cd7ad3e176c64c9c7dd7e924/modules/postgresql/main.tf",
+        "start_line": 56,
+        "end_line": 212
+      }
+    },
+    {
+      "rule_id": "AVD-GCP-0066",
+      "long_id": "google-storage-bucket-encryption-customer-key",
+      "rule_description": "Cloud Storage buckets should be encrypted with a customer-managed key.",
+      "rule_provider": "google",
+      "rule_service": "storage",
+      "impact": "Using unmanaged keys does not allow for proper key management.",
+      "resolution": "Encrypt Cloud Storage buckets using customer-managed keys.",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/storage/bucket-encryption-customer-key/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket#encryption"
+      ],
+      "description": "Storage bucket encryption does not use a customer-managed key.",
+      "severity": "LOW",
+      "warning": false,
+      "status": 0,
+      "resource": "google_storage_bucket.main",
+      "location": {
+        "filename": "/Users/a0084756/workspace/acme-corp/infrastructure/modules/instance/postgresql/backups.tf",
+        "start_line": 1,
+        "end_line": 14
+      }
+    },
+    {
+      "rule_id": "AVD-GCP-0066",
+      "long_id": "google-storage-bucket-encryption-customer-key",
+      "rule_description": "Cloud Storage buckets should be encrypted with a customer-managed key.",
+      "rule_provider": "google",
+      "rule_service": "storage",
+      "impact": "Using unmanaged keys does not allow for proper key management.",
+      "resolution": "Encrypt Cloud Storage buckets using customer-managed keys.",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/storage/bucket-encryption-customer-key/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket#encryption"
+      ],
+      "description": "Storage bucket encryption does not use a customer-managed key.",
+      "severity": "LOW",
+      "warning": false,
+      "status": 0,
+      "resource": "google_storage_bucket.main",
+      "location": {
+        "filename": "/Users/a0084756/workspace/acme-corp/infrastructure/modules/instance/site-asset-backend/main.tf",
+        "start_line": 1,
+        "end_line": 27
+      }
+    },
+    {
+      "rule_id": "AVD-GCP-0001",
+      "long_id": "google-storage-no-public-access",
+      "rule_description": "Ensure that Cloud Storage bucket is not anonymously or publicly accessible.",
+      "rule_provider": "google",
+      "rule_service": "storage",
+      "impact": "Public exposure of sensitive data.",
+      "resolution": "Restrict public access to the bucket.",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.10/checks/google/storage/no-public-access/",
+        "https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket_iam#member/members"
+      ],
+      "description": "Bucket allows public access.",
+      "severity": "HIGH",
+      "warning": false,
+      "status": 0,
+      "resource": "google_storage_bucket_iam_member.main",
+      "location": {
+        "filename": "/Users/a0084756/workspace/acme-corp/infrastructure/modules/instance/site-asset-backend/main.tf",
+        "start_line": 54,
+        "end_line": 54
+      }
+    }
+  ]
+}

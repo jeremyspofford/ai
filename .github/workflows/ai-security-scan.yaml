@@ -1,0 +1,41 @@
+name: AI Security Scan
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  ai_security_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install --no-cache-dir openai hcl2 gitlab python-dotenv tfsec
+
+      - name: Run AI Security Scan
+        run: |
+          python scripts/ai_security_scan.py \
+            --source-dir terraform \
+            --tfsec-out tfsec_results.json \
+            --report-out audit_report.md
+
+      - name: Upload tfsec results
+        uses: actions/upload-artifact@v4
+        with:
+          name: tfsec_results
+          path: tfsec_results.json
+
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit_report
+          path: audit_report.md
